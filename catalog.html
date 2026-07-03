@@ -4,15 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Каталог — ОБЖИГ</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 </head>
 <body>
+<!-- =====================================================
+     ВЕБ-АНАЛИТИКА (Яндекс.Метрика)
+     Замените XXXXXXXX на номер вашего счётчика с
+     https://metrika.yandex.ru — после регистрации сайта
+     там выдадут готовый код, вставьте его вместо этого
+     блока на всех трёх страницах.
+     ===================================================== -->
+<!--
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(XXXXXXXX, "init", {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+-->
+
 
 <!-- ===== HEADER / MENU ===== -->
 <header class="site-header">
   <nav class="navbar navbar-expand-lg py-3 container">
+    <!-- Логотип сайта: SVG-иконка кувшина + текстовый вордмарк, ведёт на главную -->
     <a class="brand" href="index.html">
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
         <path d="M10 34 Q10 22 14 16 Q11 13 14 8 H26 Q29 13 26 16 Q30 22 30 34 Q20 38 10 34Z" fill="#B5533C"/>
@@ -24,9 +46,11 @@
         <span class="brand-tagline">керамика ручной работы</span>
       </span>
     </a>
+    <!-- Кнопка-гамбургер для мобильного меню -->
     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- Главное меню сайта -->
     <div class="collapse navbar-collapse justify-content-end" id="nav">
       <ul class="navbar-nav align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
@@ -47,7 +71,7 @@
   <h1 class="mb-2 mt-1">Каталог изделий</h1>
   <p class="text-muted mb-4" style="max-width:60ch;">Все изделия — в единственном экземпляре. После продажи товар помечается «нет в наличии».</p>
 
-  <!-- filter row -->
+  <!-- Панель фильтров и поиска по каталогу -->
   <div class="row g-2 mb-4">
     <div class="col-md-4">
       <select class="form-select">
@@ -65,11 +89,12 @@
       </select>
     </div>
     <div class="col-md-4">
-      <input type="search" class="form-control" placeholder="Поиск по каталогу…">
+      <!-- Поле живого поиска: script.js слушает input и фильтрует строки таблицы по названию/категории/глазури -->
+      <input type="search" id="catalogSearch" class="form-control" placeholder="Поиск по каталогу…">
     </div>
   </div>
 
-  <!-- data list as table -->
+  <!-- Список товаров: таблица Bootstrap с данными каталога (страница со списком данных) -->
   <div class="table-responsive">
     <table class="table table-catalog align-middle">
       <thead>
@@ -84,9 +109,9 @@
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="catalogBody">
         <tr>
-          <td><div class="piece-thumb" style="width:56px;height:44px;border-radius:4px;"></div></td>
+          <td><div class="piece-thumb" style="width:56px;height:44px;border-radius:4px;background-image:url('img/bowl-polyn.jpg');" role="img" aria-label="Чаша «Полынь»"></div></td>
           <td><strong>Чаша «Полынь»</strong></td>
           <td>Чаши и тарелки</td>
           <td><span class="swatch" style="background:#78876B"></span>шалфей</td>
@@ -96,7 +121,7 @@
           <td><a href="order.html" class="btn btn-sm btn-outline-clay">Заказать</a></td>
         </tr>
         <tr>
-          <td><div class="piece-thumb" style="width:56px;height:44px;border-radius:4px;background:linear-gradient(160deg,#B5533C,#C79A45);"></div></td>
+          <td><div class="piece-thumb" style="width:56px;height:44px;border-radius:4px;background-image:url('img/mug-ugol.jpg');" role="img" aria-label="Кружка «Уголь»"></div></td>
           <td><strong>Кружка «Уголь»</strong></td>
           <td>Кружки</td>
           <td><span class="swatch" style="background:#2B2622"></span>уголь</td>
@@ -106,7 +131,7 @@
           <td><a href="order.html" class="btn btn-sm btn-outline-clay">Заказать</a></td>
         </tr>
         <tr>
-          <td><div class="piece-thumb" style="width:56px;height:44px;border-radius:4px;background:linear-gradient(160deg,#78876B,#DCD2BE);"></div></td>
+          <td><div class="piece-thumb" style="width:56px;height:44px;border-radius:4px;background-image:url('img/plate-shalfey.jpg');" role="img" aria-label="Тарелка «Шалфей»"></div></td>
           <td><strong>Тарелка «Шалфей»</strong></td>
           <td>Чаши и тарелки</td>
           <td><span class="swatch" style="background:#DCD2BE"></span>молочный</td>
@@ -116,7 +141,7 @@
           <td><a href="order.html" class="btn btn-sm btn-outline-clay">Заказать</a></td>
         </tr>
         <tr>
-          <td><div class="piece-thumb" style="width:56px;height:44px;border-radius:4px;background:linear-gradient(160deg,#8F3F2C,#B5533C);"></div></td>
+          <td><div class="piece-thumb" style="width:56px;height:44px;border-radius:4px;background-image:url('img/vase-obzhig9.jpg');" role="img" aria-label="Ваза «Обжиг №9»"></div></td>
           <td><strong>Ваза «Обжиг №9»</strong></td>
           <td>Вазы</td>
           <td><span class="swatch" style="background:#8F3F2C"></span>терракота</td>
@@ -139,7 +164,7 @@
     </table>
   </div>
 
-  <!-- pagination -->
+  <!-- Постраничная навигация по каталогу -->
   <nav class="mt-4" aria-label="Страницы каталога">
     <ul class="pagination">
       <li class="page-item active"><span class="page-link">1</span></li>
@@ -185,5 +210,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Собственный скрипт сайта: обработка формы заказа и поиск по каталогу -->
+<script src="script.js"></script>
 </body>
 </html>

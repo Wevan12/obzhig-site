@@ -1,4 +1,10 @@
-/* ===== ОБЖИГ — design tokens ===== */
+/* =====================================================
+   ОБЖИГ — единый файл стилей сайта
+   Используется на всех трёх страницах (index/catalog/order)
+   Дополняет Bootstrap 5 собственными переменными и классами
+   ===================================================== */
+
+/* ---- Цветовые и прочие переменные (design tokens) ---- */
 :root{
   --bg: #EFE8DA;
   --card: #FBF7EF;
@@ -15,13 +21,13 @@
 body{
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
 
 h1,h2,h3,.brand-word{
-  font-family: 'Fraunces', serif;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
@@ -128,14 +134,15 @@ a:hover{ color: var(--clay); }
 }
 .card-piece .piece-thumb{
   aspect-ratio: 4/3;
-  background: linear-gradient(160deg, var(--sage) 0%, var(--gold) 100%);
-  opacity:.85;
+  background-size: cover;
+  background-position: center;
+  opacity:1;
 }
 .card-piece .card-body{ padding:1.1rem 1.2rem 1.3rem; }
 .price{
-  font-family:'Fraunces', serif;
+  font-family:'Montserrat', sans-serif;
   color: var(--clay-dark);
-  font-weight:600;
+  font-weight:700;
 }
 .glaze-dot{
   width:14px; height:14px; border-radius:50%;
@@ -146,7 +153,8 @@ a:hover{ color: var(--clay); }
 .table-catalog thead{
   background: var(--ink);
   color: var(--bg);
-  font-family:'Fraunces', serif;
+  font-family:'Montserrat', sans-serif;
+  font-weight:600;
   letter-spacing:.03em;
 }
 .table-catalog td, .table-catalog th{ vertical-align:middle; }
